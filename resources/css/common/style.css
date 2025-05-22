@@ -1,0 +1,107 @@
+@import "reset.css";
+@import "../token/tokens.css";
+
+:root {
+    --header-height: 95px;
+    --padding-10: 10px;
+    --padding-20: 20px;
+    --border-default: 1px solid #ddd;
+    --border-white: 1px solid #fff;
+}
+
+/*--------- 레이아웃 ---------*/
+.wrapper {
+    width: 100%;
+    min-width: 1024px;
+    margin: 0 auto;
+}
+.header h1{
+    width: 100%;
+    height: var(--header-height);
+    font-size: 2.2em;
+    font-weight: 200;
+    line-height: 150%;
+    color: var(--ref-color-cool_neutral-80);
+    padding: var(--padding-20);
+    background-color: var(--ref-color-cool_neutral-10);
+}
+.container {
+    display: flex;
+    height: calc(100vh - 95px);
+}
+
+/*--------- 왼쪽 메뉴 ---------*/
+aside{
+    width: 200px;
+    height: calc(100vh - var(--header-height));
+    padding: 0 var(--padding-20);
+    background-color: var(--ref-color-cool_neutral-10);
+}
+aside ul.component-list {
+    margin: 30px 0;
+}
+aside ul.component-list li{
+    padding: var(--padding-10) 0;
+    border-bottom: var(--border-white);
+}
+aside ul.component-list li a{
+    display: block;
+    font-size: var(--ref-typo-font-size-body-4);
+    font-weight: var(--ref-typo-font-weight-bold);
+}
+aside ul.component-list li a:hover{
+    color: var(--ref-color-primary-50);
+}
+aside ul.component-list li a span{
+    color: var(--ref-color-cool_neutral-60);
+    font-size: var(--ref-typo-font-size-body-5);
+    font-weight: var(--ref-typo-font-weight-regular);
+}
+
+/*--------- 컴포넌트 목록 ---------*/
+main.component-wrapper {
+    width: calc(100% - 200px);
+    max-height: 100vh;
+    padding: var(--padding-20);
+    overflow-y: auto;
+    display: flex;
+    flex-direction:column;
+    gap: 20px;
+}
+main.component-wrapper .component-item {
+    padding: var(--padding-10);
+}
+main.component-wrapper .component-item h3.item-header {
+    line-height: 184%;
+    font-size: var(--ref-typo-font-size-heading-4);
+    font-weight: var(--ref-typo-font-weight-bold);
+    border-bottom: var(--border-default);
+}
+main.component-wrapper .component-item h3.item-header > span{
+    font-size: var(--ref-typo-font-size-body-3);
+    font-weight: lighter !important;
+    color: var(--ref-color-cool_neutral-60);
+}
+main.component-wrapper .component-item .item-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px 0 0;
+}
+main.component-wrapper .component-item .item-content .inner {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+main.component-wrapper .component-item .item-content h4{
+    width: 80px;
+    font-size: var(--ref-typo-font-size-heading-5);
+    /* font-weight: var(--ref-typo-font-weight-medium); */
+    color: var(--ref-color-cool_neutral-50);
+}
+.divider{
+    width: 100%;
+    height: 1px;
+    background-color: var(--ref-color-cool_neutral-20);
+}

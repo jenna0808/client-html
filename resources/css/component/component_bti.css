@@ -1,0 +1,826 @@
+@charset "UTF-8";
+@import "../token/tokens.css";
+
+
+:root{
+    --icon--color-primary: invert(63%) sepia(100%) saturate(6142%) hue-rotate(258deg) brightness(84%) contrast(102%);
+    --icon--color-primary-dark: invert(22%) sepia(68%) saturate(3150%) hue-rotate(250deg) brightness(71%) contrast(117%);
+    --icon--color-primary-light: invert(41%) sepia(99%) saturate(1106%) hue-rotate(231deg) brightness(100%) contrast(73%);
+    --icon--size-large: 24px;
+    --icon--size-midium: 22px;
+    --icon--size-small: 20px;
+    --input--size-large: 56px;
+    --input--size-medium: 48px;
+    --input--size-small: 36px;
+    --select--paddind-large: 0 16px;
+    --select--paddind-medium: 0 12px;
+    --select--paddind-small: 0 12px;
+    --textarea--paddind-large: 8px 16px;
+    --textarea--paddind-medium: 8px 16px;
+    --textarea--paddind-small: 6px 12px;
+}
+/*--------- 공통 ---------*/
+.svg-icon {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    font-size: 0;
+}
+
+/*--------- 버튼 ---------*/
+.btids-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+}
+.btids-btn:disabled{
+    color: var(--com-button-color-text-lighter);
+    background-color: var(--com-button-color-background-light);
+    cursor: default;
+}
+.btids-btn:focus{
+    outline-offset: 2px solid;
+}
+.btids-btn span{
+    display: block;
+    text-align: center;
+    line-height: 1;
+}
+.btids-btn:disabled .svg-icon,
+.btids-btn.link.disabled .svg-icon{
+    filter: invert(0.5);
+}
+
+/*--------- 버튼 사이즈 ---------*/
+.btids-btn.large{
+    height: var(--com-button-height-large);
+    font-size: var(--ref-typo-font-size-body-2);
+    font-weight: var(--ref-typo-font-weight-medium);
+    line-height: var(--ref-typo-line-height-body-2);
+    border-radius: var(--com-button-radius-large);
+    padding: 0 var(--com-button-padding-horizontal-large);
+    gap: var(--com-button-gap-large);
+}
+.btids-btn.large .svg-icon {
+    width: var(--icon--size-large);
+    height: var(--icon--size-large);
+}
+.btids-btn.medium{
+    height: var(--com-button-height-medium);
+    font-size: var(--ref-typo-font-size-body-3);
+    font-weight: var(--ref-typo-font-weight-medium);
+    line-height: var(--ref-typo-line-height-body-3);
+    border-radius: var(--com-button-radius-medium);
+    padding: 0 var(--com-button-padding-horizontal-medium);
+    gap: var(--com-button-gap-medium);
+}
+.btids-btn.medium .svg-icon {
+    width: var(--icon--size-large);
+    height: var(--icon--size-large);
+}
+.btids-btn.small{
+    height: var(--com-button-height-small);
+    font-size: var(--ref-typo-font-size-body-4);
+    font-weight: var(--ref-typo-font-weight-small);
+    line-height: var(--ref-typo-line-height-body-4);
+    border-radius: var(--com-button-radius-small);
+    padding: 0 var(--com-button-padding-horizontal-small);
+    gap: var(--com-button-gap-small);
+}
+.btids-btn.small .svg-icon {
+    width: var(--icon--size-small);
+    height: var(--icon--size-small);
+}
+
+/*--------- 버튼 스타일 ---------*/
+/* 버튼 스타일 - bgcolor */
+.btids-btn.primary{
+    color: var(--com-button-color-text-inverse);
+    background-color: var(--com-button-color-background-primary);
+}
+.btids-btn.primary:hover{
+    background-color: var(--com-button-color-background-primary-light);
+}
+.btids-btn.primary:focus{
+    outline-offset: var(--com-button-color-border-primary-dark);
+}
+.btids-btn.primary:active{
+    background-color: var(--com-button-color-background-primary-dark);
+}
+.btids-btn.primary .svg-icon{
+    filter: invert(0);
+}
+
+/* 버튼 스타일 - outline border color */
+.btids-btn.outline.primary{
+    color: var(--com-button-color-text-primary);
+    border: 1px solid var(--com-button-color-border-primary);
+}
+.btids-btn.outline.primary .svg-icon{
+    filter: var(--icon--color-primary);
+}
+
+/* 버튼 스타일 - outline */
+.btids-btn.outline{
+    background-color: var(--com-button-color-background-lighter);
+}
+.btids-btn.outline:hover{
+    background-color: var(--com-button-color-background-primary-bright);
+}
+.btids-btn.outline:focus{
+    outline-offset: var(--com-button-color-border-basic);
+}
+.btids-btn.outline:active,
+.btids-btn.outline:checked{
+    background-color: var(--com-button-color-background-primary-lighter);
+}
+
+/*--------- 아이콘 ---------*/
+.svg-icon.ico-add {
+    -webkit-background-image: url(../../img/icon/ico-add.svg);
+    background-image: url(../../img/icon/ico-add.svg);
+    background-size: cover;
+}
+.svg-icon.ico-go-back {
+    -webkit-background-image: url(../../img/icon/ico-arrow-go-back.svg);
+    background-image: url(../../img/icon/ico-arrow-go-back.svg);
+    background-size: cover;
+}
+.svg-icon.ico-external-link {
+    -webkit-background-image: url(../../img/icon/ico-external-link.svg);
+    background-image: url(../../img/icon/ico-external-link.svg);
+    background-size: cover;
+}
+
+/*--------- Link ---------*/
+.btids-btn.link{
+    font-weight: var(--ref-typo-font-weight-ragular);
+    gap: var(--com-button-gap-small);
+    padding: 0;
+}
+.btids-btn.link:hover{
+    color: var(--com-button-color-background-primary-lighter);
+    filter: invert(41%) sepia(99%) saturate(1106%) hue-rotate(231deg) brightness(100%) contrast(73%);
+}
+.btids-btn.link:focus{
+    color: var(--com-button-color-background-primary-dark);
+    filter: invert(21%) sepia(30%) saturate(6193%) hue-rotate(249deg) brightness(84%) contrast(115%);
+}
+.btids-btn.link:active{
+    color: var(--com-button-color-background-primary);
+    filter: invert(63%) sepia(100%) saturate(6142%) hue-rotate(258deg) brightness(84%) contrast(102%);
+}
+.btids-btn.link.disabled,
+.btids-btn.link.disabled:hover{
+    color: var(--com-button-color-text-lighter)!important;
+    cursor: default;
+}
+.btids-btn.link .underline{
+    text-decoration: underline;
+}
+.btids-btn.link .svg-icon{
+    filter: invert(0%);
+}
+/*--------- Link 사이즈 ---------*/
+.btids-btn.link.large{
+    font-size: var(--ref-typo-font-size-body-1);
+    line-height: var(--ref-typo-line-height-body-1);
+}
+.btids-btn.link.medium{
+    font-size: var(--ref-typo-font-size-body-2);
+    line-height: var(--ref-typo-line-height-body-2);
+}
+.btids-btn.link.small{
+    font-size: var(--ref-typo-font-size-body-3);
+    line-height: var(--ref-typo-line-height-body-3);
+}
+
+/*--------- form 레이아웃 ---------*/
+.fieldset {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    /* gap: var(--ref-gap-4); */
+}
+
+.form-col-group {
+    display: flex;
+    gap: var(--ref-gap-32);
+}
+.form-group {
+    width: fit-content;
+}
+.form-group .form-conts {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: var(--ref-gap-12);
+    width: 100%;
+}
+
+/*--------- Radio Button ---------*/
+
+/* 라디오 버튼 / 체크박스 */
+input[type=radio],
+input[type=checkbox] {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+label {
+    display: inline-flex;
+}
+
+.btids-check-area {
+    display: flex;
+    gap: var(--ref-gap-16);
+}
+.btids-check-area.chk-column {
+    flex-direction: column;
+}
+.btids-form-check > input[type='radio'] + label, .btids-form-check > input[type=checkbox] ~ label {
+    position: relative;
+    cursor: pointer;
+}
+
+.btids-form-check > input[type=radio] ~ label::before, .btids-form-check > input[type=checkbox] ~ label::before,
+.btids-form-check > input[type=radio] ~ label::after, .btids-form-check > input[type=checkbox] ~ label::after{
+    display: block;
+}
+
+/* 라디오버튼, 체크박스 border */
+.btids-form-check > input[type=checkbox] ~ label::before,
+.btids-form-check > input[type=checkbox]:disabled ~ label::before,
+.btids-form-check > input[type=radio] ~ label::before,
+.btids-form-check > input[type=radio]:disabled ~ label::before{
+    content: '';
+    border: 1px solid var(--com-radio_button-color-border-dark);
+}
+
+/* 라디오버튼, 체크박스 기본 백그라운드 컬러 */
+.btids-form-check > input[type=radio] ~ label::before,
+.btids-form-check > input[type=checkbox] ~ label::before{
+    content: '';
+    background-color: var(--com-checkbox-color-background-inverse);
+}
+/* hover 보더 컬러 */
+.btids-form-check > input[type=radio] ~ label:hover::before,
+.btids-form-check > input[type=checkbox] ~ label:hover::before{
+    border-color: var(--com-checkbox-color-background-primary);
+}
+/* 라디오버튼, 체크박스 위치 */
+.btids-form-check > input[type=radio] ~ label::before,
+.btids-form-check > input[type=radio]:checked ~ label::before,
+.btids-form-check > input[type=radio]:checked:disabled ~ label::before,
+.btids-form-check > input[type=radio]:disabled ~ label::before,
+.btids-form-check > input[type=checkbox] ~ label::before,
+.btids-form-check > input[type=checkbox]:disabled ~ label::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+/*--------- 라디오 버튼, 체크박스 사이즈 ---------*/
+/* Large */
+.btids-form-check.large > input[type='radio'] + label, .btids-form-check.large > input[type=checkbox] ~ label {
+    padding: 0 0 0 35px;
+}
+.btids-form-check.large > input[type=radio] ~ label, .btids-form-check.large > input[type=checkbox] ~ label{
+    font-size: var(--ref-typo-font-size-body-2);
+    line-height: var(--ref-typo-line-height-body-2);
+    font-weight: var(--ref-typo-font-weight-small);
+}
+.btids-form-check.large > input[type=radio] ~ label::before,
+.btids-form-check.large > input[type=radio]:checked ~ label::before,
+.btids-form-check.large > input[type=radio]:checked:disabled ~ label::before,
+.btids-form-check.large > input[type=radio]:disabled ~ label::before,
+.btids-form-check.large > input[type=checkbox] ~ label::before,
+.btids-form-check.large > input[type=checkbox]:checked ~ label::before,
+.btids-form-check.large > input[type=checkbox]:checked:disabled ~ label::before,
+.btids-form-check.large > input[type=checkbox]:disabled ~ label::before,
+.btids-form-check.large > input[type=checkbox]:checked ~ label::after,
+.btids-form-check.large > input[type=checkbox]:checked:disabled ~ label::after{
+    content: '';
+    width: 24px;
+    height: 24px;
+}
+
+.btids-form-check.large > input[type=radio]:checked ~ label::after,
+.btids-form-check.large > input[type=radio]:checked:disabled ~ label::after{
+    content: '';
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    width: 12px;
+    height: 12px;
+}
+/* Small */
+.btids-form-check.small > input[type='radio'] + label, .btids-form-check.small > input[type=checkbox] ~ label {
+    padding: 0 0 0 30px;
+}
+.btids-form-check.small > input[type=radio] ~ label, .btids-form-check.small > input[type=checkbox] ~ label{
+    font-size: var(--ref-typo-font-size-body-3);
+    line-height: var(--ref-typo-line-height-body-3);
+    font-weight: var(--ref-typo-font-weight-small);
+}
+.btids-form-check.small > input[type=radio] ~ label::before,
+.btids-form-check.small > input[type=radio]:checked ~ label::before,
+.btids-form-check.small > input[type=radio]:checked:disabled ~ label::before,
+.btids-form-check.small > input[type=radio]:disabled ~ label::before,
+.btids-form-check.small > input[type=checkbox] ~ label::before,
+.btids-form-check.small > input[type=checkbox]:checked ~ label::before,
+.btids-form-check.small > input[type=checkbox]:checked:disabled ~ label::before,
+.btids-form-check.small > input[type=checkbox]:disabled ~ label::before,
+.btids-form-check.small > input[type=checkbox]:checked ~ label::after,
+.btids-form-check.small > input[type=checkbox]:checked:disabled ~ label::after{
+    content: '';
+    width: 20px;
+    height: 20px;
+}
+
+.btids-form-check > input[type=checkbox]:checked ~ label::after,
+.btids-form-check > input[type=checkbox]:checked:disabled ~ label::after{
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 1px;
+}
+.btids-form-check.small > input[type=radio]:checked ~ label::after,
+.btids-form-check.small > input[type=radio]:checked:disabled ~ label::after{
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 10px;
+    height: 10px;
+}
+
+
+/*--------- 체크박스 radius ---------*/
+/* Small */
+.btids-form-check.small > input[type=checkbox] ~ label::before,
+.btids-form-check.small > input[type=checkbox]:checked ~ label::before,
+.btids-form-check.small > input[type=checkbox]:checked:disabled ~ label::before,
+.btids-form-check.small > input[type=checkbox]:disabled ~ label::before{
+    content: '';
+    border-radius: var(--com-checkbox-radius-medium);
+}
+
+/* Large */
+.btids-form-check.large > input[type=checkbox] ~ label::before,
+.btids-form-check.large > input[type=checkbox]:checked ~ label::before,
+.btids-form-check.large > input[type=checkbox]:checked:disabled ~ label::before,
+.btids-form-check.large > input[type=checkbox]:disabled ~ label::before{
+    content: '';
+    border-radius: var(--com-checkbox-radius-large);
+}
+
+
+/*--------- 라디오 버튼 기본 디자인 ---------*/
+/* 라디오버튼 radius */
+.btids-form-check > input[type=radio] ~ label::before,
+.btids-form-check > input[type=radio]:checked ~ label::before,
+.btids-form-check > input[type=radio]:checked:disabled ~ label::before,
+.btids-form-check > input[type=radio]:disabled ~ label::before,
+.btids-form-check > input[type=radio]:checked ~ label::after,
+.btids-form-check > input[type=radio]:checked:disabled ~ label::after {
+    border-radius: var(--com-radio_button-radius-max);
+}
+/* 라디오버튼 checked 중간 도트 컬러 primary */
+.btids-form-check > input[type=radio]:checked ~ label::after{
+    background-color: var(--com-radio_button-color-background-primary);
+}
+/* 라디오버튼 checked border 외부음영 컬러 */
+.btids-form-check > input[type=radio]:checked ~ label::before{
+    outline-style: solid;
+    outline-color: var(--ref-color-primary-10);
+}
+
+/* 라디오버튼 disabled 백그라운드 컬러 */
+.btids-form-check > input[type=radio]:checked:disabled ~ label::before,
+.btids-form-check > input[type=radio]:disabled ~ label::before{
+    background-color: var(--com-radio_button-color-background-lighter);
+}
+
+/* 라디오버튼 checked:disabled 중간 도트 컬러 */
+.btids-form-check > input[type=radio]:checked:disabled ~ label::after{
+    background-color: var(--com-radio_button-color-background-light);
+}
+/* 라디오버튼 checked:disabled border 외부음영 컬러 */
+.btids-form-check > input[type=radio]:checked:disabled ~ label::before{
+    outline-style: solid;
+    outline-color: var(--com-radio_button-color-background-bright);
+}
+
+/*--------- 체크박스 기본 디자인 ---------*/
+
+/* 체크박스 checked, 체크아이콘 */
+.btids-form-check > input[type=checkbox]:checked ~ label::before{
+    background: var(--com-checkbox-color-background-primary);
+}
+.btids-form-check > input[type=checkbox]:checked ~ label::after,
+.btids-form-check > input[type=checkbox]:checked:disabled ~ label::after{
+    background: url(../../img/icon/ico-check.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position:  center center;
+}
+.btids-form-check.add > input[type=checkbox]:checked ~ label::after,
+.btids-form-check.add > input[type=checkbox]:checked:disabled ~ label::after{
+    background: url(../../img/icon/ico-subtrack.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position:  center center;
+}
+
+/* 체크박스 disabled 백그라운드 컬러 */
+.btids-form-check > input[type=checkbox]:checked:disabled ~ label::before,
+.btids-form-check > input[type=checkbox]:disabled ~ label::before{
+    background-color: var(--com-radio_button-color-background-lighter);
+}
+/* 체크박스 checked:disabled 체크아이콘 */
+.btids-form-check > input[type=checkbox]:checked:disabled ~ label::after{
+    filter: invert(56%) sepia(14%) saturate(213%) hue-rotate(169deg) brightness(96%) contrast(88%);
+}
+
+/* --------- Select - Custom Select (ul/li) --------- */
+.btids-dropdown {
+    position: relative;
+    display: inline-block;
+    min-width: 220px;
+}
+.btids-dropdown-toggle {
+    position: relative;
+    width: 100%;
+    display: flex;
+    text-align: left;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+.btids-dropdown-toggle,
+.btids-dropdown-menu li,
+.btids-dropdown-option{
+    background: var(--ref-color-common-0);
+    border: 1px solid var(--com-button-color-border-basic);
+}
+.btids-dropdown-toggle.disabled{
+    background: var(--com-button-color-background-light);
+    border: 1px solid var(--com-radio_button-color-border-dark);
+}
+
+.btids-dropdown-toggle:hover{
+    border-color: var(--com-checkbox-color-background-primary);
+}
+
+.btids-dropdown-label,
+.btids-dropdown-option a {
+    flex: 1;
+    color: var(--com-button-color-text-basic);
+}
+.btids-dropdown-icon{
+    width: var(--icon--size-midium);
+    height: var(--icon--size-midium);
+}
+.ico-arrow-down {
+    background: url('../../img/icon/ico-arrow-down.svg') no-repeat center ;
+    transition: transform 0.2s;
+}
+.btids-dropdown-toggle[aria-expanded="true"] .btids-dropdown-icon {
+    transform: rotate(180deg);
+}
+.btids-dropdown-menu {
+    display: none;
+    min-width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(100% + 4px);
+    z-index: 10;
+    background: #fff;
+    border: 1px solid var(--com-button-color-border-basic);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    padding: 8px 0;
+    margin: 0;
+}
+.btids-dropdown-toggle[aria-expanded="true"] + .btids-dropdown-menu,
+.btids-dropdown-menu.active {
+    display: block;
+}
+.btids-dropdown-menu li,
+.btids-dropdown-option a{
+    position: relative;
+    display: block;
+    width: 100%;
+    color: var(--com-button-color-text-basic);
+    border: none;
+    transition: background 0.15s, color 0.15s;
+    background: transparent;
+}
+.btids-dropdown-menu li{
+    padding: 0 8px;
+}
+.btids-dropdown-option a:hover {
+    background: var(--com-button-color-background-primary-bright);
+}
+.btids-dropdown-option a:checked,
+.btids-dropdown-option a:active {
+    background: var(--com-button-color-background-primary-lighter);
+}
+.btids-dropdown-option a.option-selected,
+.btids-dropdown-option[aria-selected="true"] a{
+    color: var(--com-button-color-text-primary);
+    font-weight: var(--ref-typo-font-weight-medium);
+    background: var(--com-button-color-background-primary-bright) url(../../img/icon/ico-check-gray.svg) no-repeat right center; 
+}
+
+.btids-dropdown-option .ico-check {
+    display: none;
+}
+.btids-dropdown-option.option-selected .ico-check,
+.btids-dropdown-option[aria-selected="true"] .ico-check {
+    display: inline-block;
+}
+/* 드롭다운 메뉴가 ul/li 구조일 때도 동일하게 적용 */
+.btids-dropdown-menu {
+    box-sizing: border-box;
+}
+.btids-dropdown-menu li {
+    user-select: none;
+}
+
+/*--------- 드롭다운 사이즈 ---------*/
+/* Large */
+.btids-dropdown.large .btids-dropdown-toggle {
+    height: var(--input--size-large);
+    padding: var(--select--paddind-large);
+}
+.btids-dropdown.large .btids-dropdown-toggle,
+.btids-dropdown.large .btids-dropdown-menu,
+.btids-dropdown.large .btids-dropdown-option,
+.btids-dropdown.large .btids-dropdown-option a {
+    font-size: var(--ref-typo-font-size-body-1);
+    border-radius: var(--com-button-radius-large);
+}
+.btids-dropdown.large .btids-dropdown-menu li,
+.btids-dropdown.large .btids-dropdown-option a{
+    height: 48px;
+    line-height: 48px;
+}
+
+.btids-dropdown.large .btids-dropdown-option[aria-selected="true"] a{
+    background-size: var(--icon--size-midium);
+}
+.btids-dropdown.large .btids-dropdown-option a{
+    border-left: 16px solid transparent;
+    border-right: 12px solid transparent;
+}
+/* Small */
+.btids-dropdown.small .btids-dropdown-toggle {
+    height: var(--input--size-small);
+    padding: var(--select--paddind-small);
+}
+.btids-dropdown.small .btids-dropdown-toggle,
+.btids-dropdown.small .btids-dropdown-menu,
+.btids-dropdown.small .btids-dropdown-option,
+.btids-dropdown.small .btids-dropdown-option a {
+    font-size: var(--ref-typo-font-size-body-3);
+    border-radius: var(--com-button-radius-small);
+}
+.btids-dropdown.small .btids-dropdown-menu li,
+.btids-dropdown.small .btids-dropdown-option a{
+    height: 36px;
+    line-height: 36px;
+}
+.btids-dropdown.small .btids-dropdown-option[aria-selected="true"] a{
+    background-size: var(--icon--size-small);
+}
+.btids-dropdown.small .btids-dropdown-option a{
+    border-left: 16px solid transparent;
+    border-right: 10px solid transparent;
+}
+
+/*--------- Input, Textarea ---------*/
+.btids-input {
+    position: relative;
+    display: flex;
+    text-align: left;
+    align-items: center;
+    justify-content: space-between;
+}
+.btids-input textarea {
+    width: 100%;
+    height: 100%;
+}
+.btids-input input,
+.btids-input textarea {
+    background: var(--ref-color-common-0);
+    border: 1px solid; 
+    border-color: var(--com-button-color-border-basic);
+}
+.btids-input input:disabled,
+.btids-input textarea:disabled{
+    background: var(--com-button-color-background-light);
+    border: 1px solid var(--com-radio_button-color-border-dark);
+}
+.btids-input input:hover,
+.btids-input textarea:hover,
+.btids-input input:active,
+.btids-input textarea:active{
+    border-color: var(--com-checkbox-color-background-primary);
+}
+.btids-input input:focus,
+.btids-input textarea:focus{
+    outline: 1px solid var(--com-color-info);
+    border-color: var(--com-color-info);
+}
+
+/*--------- Input, Textarea 사이즈 ---------*/
+/* Large */
+.btids-input.large input,
+.btids-input.large textarea {
+    font-size: var(--ref-typo-font-size-body-1);
+    border-radius: var(--com-button-radius-large);
+}
+.btids-input.large input {
+    height: var(--input--size-large);
+    padding: var(--select--paddind-large);
+}
+.btids-input.large textarea {
+    padding: var(--textarea--paddind-large);
+}
+
+/* Medium */
+.btids-input.medium input,
+.btids-input.medium textarea {
+    font-size: var(--ref-typo-font-size-body-2);
+    border-radius: var(--com-button-radius-medium);
+}
+.btids-input.medium input {
+    height: var(--input--size-medium);
+    padding: var(--select--paddind-medium);
+}
+.btids-input.medium textarea {
+    padding: var(--textarea--paddind-medium);
+}
+
+
+/* Small */
+.btids-input.small input,
+.btids-input.small textarea {
+    font-size: var(--ref-typo-font-size-body-3);
+    border-radius: var(--com-button-radius-small);
+}
+.btids-input.small input {
+    height: var(--input--size-small);
+    padding: var(--select--paddind-small);
+}
+.btids-input.small textarea {
+    padding: var(--textarea--paddind-small);
+}
+/*--------- textarea 텍스트 카운트 ---------*/
+/* 기본 스타일 (textarea 하단 위치) */
+.textarea-count{
+    position: absolute;
+    top: 100%;
+    right: 0;
+    font-size: var(--ref-typo-font-size-body-5);
+    margin-top: 4px;
+    text-align: right;
+}
+/* textarea 오른쪽 위치 */
+/* :has() 구형 브라우저에서는 지원되지 않음. 구형 브라우저를 고려해야 할때는 기본 스타일의 위치로 사용하기 */
+.btids-input:has(.textarea-count.right){ 
+    align-items: flex-end;
+}
+.textarea-count.right{
+    position: relative;
+    width: fit-content;
+    margin-top: -1rem;
+    margin-left: 4px;
+    text-align: left;
+}
+
+/*--------- input 도움말 메세지 ---------*/
+.input-message{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    font-size: var(--ref-typo-font-size-body-5);
+    margin-top: 4px;
+    padding-left: 20px;
+    background-size: 16px;
+}
+
+/* 정보 */
+.focus, .info{
+    outline: 1px solid var(--com-color-info);
+    border-color: var(--com-color-info) !important;
+}
+.input-message.message-info{
+    color: var(--com-color-info);
+    background: url(../../img/icon/ico-information.svg) no-repeat left center;
+}
+/* 오류 */
+.error{
+    outline: 1px solid var(--com-color-error);
+    border-color: var(--com-color-error) !important;
+}
+.input-message.message-error{
+    color: var(--com-color-error);
+    background: url(../../img/icon/ico-error.svg) no-repeat left center;
+}
+/* 확인 */
+.success{
+    outline: 1px solid var(--com-color-success);
+    border-color: var(--com-color-success) !important;
+}
+.input-message.message-success{
+    color: var(--com-color-success);
+    background: url(../../img/icon/ico-success.svg) no-repeat left center;
+}
+/* Warning */
+.warning{
+    outline: 1px solid var(--com-color-warning);
+    border-color: var(--com-color-warning) !important;
+}
+.input-message.message-warning{
+    color: var(--com-color-warning);
+    background: url(../../img/icon/ico-warning.svg) no-repeat left center;
+}
+
+/* Icon for input */
+.btids-input .input-btn-area{
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    z-index: 2;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 2px;
+    flex-direction: row-reverse;
+}
+.btids-input .input-btn {
+    display: block;
+    border: none;
+    padding: 0;
+}
+.btids-input.large .input-btn,
+.btids-input.medium .input-btn {
+    width: 20px;
+    height: 20px;
+}
+.btids-input.small .input-btn {
+    width: 16px;
+    height: 16px;
+}
+.btids-input button.btn_input i{
+    display: inline-block;
+}
+/* Close(X) */
+.input-clear {
+    display: none;
+    background: none;
+}
+.svg-icon.ico-close {
+    border-radius: 50%;
+    -webkit-background: var(--com-button-color-background-light) url(../../img/icon/ico-close.svg);
+    background: var(--com-button-color-background-light) url(../../img/icon/ico-close.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition: background 0.2s;
+    background-size: cover;
+}
+.btids-input input[type="text"]:not(:placeholder-shown) ~ .input-clear {
+    display: block;
+}
+.btids-input input[type="text"]:focus:not(:placeholder-shown) ~ .input-clear {
+    display: block;
+}
+.btids-input .input-clear:hover .svg-icon.ico-close {
+    background-color: var(--com-button-color-background-primary-bright);
+}
+/* Eye  icon for input */
+.btids-input input[type="password"]::-ms-reveal {
+    display: none;
+}
+.svg-icon.ico-eye {
+    -webkit-background: url(../../img/icon/ico-eye.svg);
+    background: url(../../img/icon/ico-eye.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition: background 0.2s;
+    background-size: cover;
+}

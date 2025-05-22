@@ -1,0 +1,101 @@
+<h4>Large</h4>
+<div class="btids-input large">
+  <input type="text" placeholder="placeholder">
+  <button type="button" class="input-clear" tabindex="-1" aria-label="Clear input"><i class="svg-icon ico-close"></i></button>
+</div>
+<div class="btids-input large">
+  <input type="text" class="focus" placeholder="placeholder">
+  <button type="button" class="input-clear" tabindex="-1" aria-label="Clear input"><i class="svg-icon ico-close"></i></button>
+  <div class="input-message message-info">메시지를 입력해주세요</div>
+</div>
+<div class="btids-input large">
+  <input type="text" class="success" placeholder="placeholder">
+  <button type="button" class="input-clear" tabindex="-1" aria-label="Clear input"><i class="svg-icon ico-close"></i></button>
+  <div class="input-message message-success">메시지를 입력해주세요</div>
+</div>
+<div class="btids-input large">
+  <input type="text" class="warning" placeholder="placeholder">
+  <button type="button" class="input-clear" tabindex="-1" aria-label="Clear input"><i class="svg-icon ico-close"></i></button>
+  <div class="input-message message-warning">다시 입력해주세요</div>
+</div>
+<div class="btids-input large">
+  <input type="text" class="error" placeholder="placeholder">
+  <button type="button" class="input-clear" tabindex="-1" aria-label="Clear input"><i class="svg-icon ico-close"></i></button>
+  <div class="input-message message-error">다시 입력해주세요</div>
+</div>                            
+
+
+<h4>Medium</h4>
+<div class="btids-input medium">
+  <input type="text" placeholder="placeholder">
+  <button type="button" class="input-clear" tabindex="-1" aria-label="Clear input"><i class="svg-icon ico-close"></i></button>
+</div>
+<div class="btids-input medium">
+  <input type="text" class="focus" placeholder="placeholder">
+  <button type="button" class="input-clear" tabindex="-1" aria-label="Clear input"><i class="svg-icon ico-close"></i></button>
+  <div class="input-message message-info">메시지를 입력해주세요</div>
+</div>
+<div class="btids-input medium">
+  <input type="text" class="success" placeholder="placeholder">
+  <button type="button" class="input-clear" tabindex="-1" aria-label="Clear input"><i class="svg-icon ico-close"></i></button>
+  <div class="input-message message-success">메시지를 입력해주세요</div>
+</div>
+<div class="btids-input medium">
+  <input type="text" class="warning" placeholder="placeholder">
+  <button type="button" class="input-clear" tabindex="-1" aria-label="Clear input"><i class="svg-icon ico-close"></i></button>
+  <div class="input-message message-warning">다시 입력해주세요</div>
+</div>
+<div class="btids-input medium">
+  <input type="text" class="error" placeholder="placeholder">
+  <button type="button" class="input-clear" tabindex="-1" aria-label="Clear input"><i class="svg-icon ico-close"></i></button>
+  <div class="input-message message-error">다시 입력해주세요</div>
+</div>                            
+
+
+<h4>Small</h4>
+<div class="btids-input small">
+  <input type="text" placeholder="placeholder">
+  <button type="button" class="input-clear" tabindex="-1" aria-label="Clear input"><i class="svg-icon ico-close"></i></button>
+</div>
+<div class="btids-input small">
+  <input type="text" class="focus" placeholder="placeholder">
+  <button type="button" class="input-clear" tabindex="-1" aria-label="Clear input"><i class="svg-icon ico-close"></i></button>
+  <div class="input-message message-info">메시지를 입력해주세요</div>
+</div>
+<div class="btids-input small">
+  <input type="text" class="success" placeholder="placeholder">
+  <button type="button" class="input-clear" tabindex="-1" aria-label="Clear input"><i class="svg-icon ico-close"></i></button>
+  <div class="input-message message-success">메시지를 입력해주세요</div>
+</div>
+<div class="btids-input small">
+  <input type="text" class="warning" placeholder="placeholder">
+  <button type="button" class="input-clear" tabindex="-1" aria-label="Clear input"><i class="svg-icon ico-close"></i></button>
+  <div class="input-message message-warning">다시 입력해주세요</div>
+</div>
+<div class="btids-input small">
+  <input type="text" class="error" placeholder="placeholder">
+  <button type="button" class="input-clear" tabindex="-1" aria-label="Clear input"><i class="svg-icon ico-close"></i></button>
+  <div class="input-message message-error">다시 입력해주세요</div>
+</div>
+<script>
+document.querySelectorAll('.btids-input').forEach(function(inputWrap) {
+var input = inputWrap.querySelector('input[type="text"]');
+var clearBtn = inputWrap.querySelector('.input-clear');
+if (!input || !clearBtn) return;
+function toggleClearBtn() {
+if (input.value) {
+  clearBtn.style.display = 'block';
+} else {
+  clearBtn.style.display = 'none';
+}
+}
+input.addEventListener('input', toggleClearBtn);
+clearBtn.addEventListener('mousedown', function(e) {
+e.preventDefault();
+input.value = '';
+input.dispatchEvent(new Event('input'));
+input.focus();
+});
+toggleClearBtn();
+});
+</script>
